@@ -371,5 +371,3 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
 });
  
 bot.login(process.env.BOT_TOKEN);
-    .then(() => console.log('Bot is now logged in !'))
-    .catch(e => console.log);

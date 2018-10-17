@@ -1,0 +1,21 @@
+{
+  "name": "Kittybot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "meow.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+	"server": "https://discordapp.com/developers/applications/437630587671543819/information",
+    "discordToken": "NDM3NjMwNTg3NjcxNTQzODE5.Dmc8WQ.RBVTHa70mcMEtG7yrVuq-XXdI-A",
+    "channelMapping": {
+      "#other-discord": "#general"
+  },
+  "author": "SenkiTheKitty",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "eslint": "^5.4.0",
+    "sys": "0.0.1"
+  }
+}

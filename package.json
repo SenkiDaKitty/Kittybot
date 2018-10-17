@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-	"server": "https://discordapp.com/developers/applications/437630587671543819/information",
+	"server" : "https://discordapp.com/developers/applications/437630587671543819/information",
     "discordToken": "NDM3NjMwNTg3NjcxNTQzODE5.Dmc8WQ.RBVTHa70mcMEtG7yrVuq-XXdI-A",
     "channelMapping": {
       "#other-discord": "#general"

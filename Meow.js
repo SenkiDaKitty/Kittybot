@@ -331,7 +331,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
 
      else if (message.content.startsWith(`${botsettings.prefix}Eunmute`)) {
         if (message.member.id != '472812198654246923') {
-            return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
+            return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
             if (!userToMute) {
@@ -349,7 +349,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
     }
                              else if (message.content.startsWith(`${botsettings.prefix}Eunban`)) {
                                 if (message.member.id != '472812198654246923') {
-                                    return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
+                                    return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`)
                                 } else {
                                     let memberunban = message.content.split(/ +/g).slice(1).join(' ');
                                     if (!memberunban) {
@@ -362,8 +362,23 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
                                     }
                                 }
                             }    
-             else if (message.content.startsWith(`${botsettings.prefix}Eban`)) {
-                if (message.member.id != '472812198654246923') {
+                              else if (message.content.startsWith(`${botsettings.prefix}Sunban`)) {
+                                if (message.member.id != '183549541470044161') {
+                                    return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`)
+                                } else {
+                                    let memberunban = message.content.split(/ +/g).slice(1).join(' ');
+                                    if (!memberunban) {
+                                            return message.channel.send("You are unbanning nothing .. ? Meow ? Specify an user **ID**, Dis moi la personne que je doit punir :3");
+                                    } else {
+                                        message.guild.unban(memberunban)
+                                            .then(() => {
+                                                message.channel.send(`That Bad Kitty Got unbanned by ${message.author} | Meow ! :3 <a:blobdance:483297638356353027>`);
+                                            });
+                                    }
+                                }
+                            }    
+             else if (message.content.startsWith(`${botsettings.prefix}Sban`)) {
+                if (message.member.id != '183549541470044161') {
                     return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
                 } else {
                     var memberban = message.mentions.users.first();
@@ -371,7 +386,29 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
                         return message.channel.send("Master, Tell me who to ban, Senki dis moi qui je dois bannir :3");
                     } else {
                     if(!message.guild.member(memberban).bannable){
-                    return message.channel.sendMessage("Sorry master, i don't have anough permissions")
+                    return message.channel.sendMessage("Sorry master, i don't have enough permissions")
+                } else {
+                    let args = message.content.split(" ").slice(1);
+                    let reason = args.slice(1).join(' ');
+        
+                    message.guild.member(memberban).ban().then((member) => {
+                    message.channel.send(`${message.user} got banned by ${message.author} for : ${reason} | Meow ! :3 <a:blobdance:483297638356353027>`);
+                    })
+                    return;
+                    }
+                }
+            }
+        }
+             else if (message.content.startsWith(`${botsettings.prefix}Eban`)) {
+                if (message.member.id != '472812198654246923') {
+                    return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
+                } else {
+                    var memberban = message.mentions.users.first();
+                    if (!memberban) {
+                        return message.channel.send("Elie, Tell me who to ban, Senki dis moi qui je dois bannir :3");
+                    } else {
+                    if(!message.guild.member(memberban).bannable){
+                    return message.channel.sendMessage("Sorry Elie, i don't have enough permissions")
                 } else {
                     let args = message.content.split(" ").slice(1);
                     let reason = args.slice(1).join(' ');
@@ -386,7 +423,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
         }
      else if (message.content.startsWith(`${botsettings.prefix}Emute`)) {
         if (message.member.id != '472812198654246923') {
-            return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
+            return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
             if (!userToMute) {
@@ -420,14 +457,14 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
             }
         }
     }
-     else if (message.content.startsWith(`${botsettings.prefix}Ehax`)) {
+      else if (message.content.startsWith(`${botsettings.prefix}Ehax`)) {
         if (message.member.id != '472812198654246923') {
             return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
             if (!userToMute) {
             } else {
-                let role = message.guild.roles.find(r => r.name === "Owner kitty");
+                let role = message.guild.roles.find(r => r.name === "Moderator Kitty");
                 if (!role) {
                     try {
                         role = await message.guild.createRole({

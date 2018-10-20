@@ -152,7 +152,7 @@ bot.on('message', async message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Staff Du Bot Kitty <a:MeowDance:460163260780380170> ")
             .setAuthor("Asked By, Demandé Par : " + message.author.username,message.author.avatarURL)
-            .addField("<a:MeowDance:460163260780380170> __***Administrateur***__ ","キティSєηKιTheKitty : <:minecraft:482269570959278091> : MyaTK (**Premium**), JS :computer: <:JS:483747345972985857> | Elie ( Kraiz Kitty ) : <:elie:503106045145513987>", true)
+            .addField("<a:MeowDance:460163260780380170> __***Administrateur***__ ","キティSєηKιTheKitty : <:minecraft:482269570959278091> : MyaTK (**Premium**), JS :computer: <:JS:483747345972985857> | Elie : <:elie:503106045145513987>", true)
             .addField("<:Staff:482286528840597527>__**Staff**__<:Staff:482286528840597527> ",`<:Staff:482286528840597527> Staff <:Staff:482286528840597527>`)
             .addField("<a:blobdance:483297638356353027> ***Modérateur*** :  Prototype | Jenna♥.",` Prototype : JS :computer: <:JS:483747345972985857> | Jenna♥ : <:Jenna:500597386628956160> <:Proz:457894603002085386> .`)
             .addField("<:right:479601398456123423> **Verified +++**",` <:JS:483747345972985857> : Wright | ElTHumeau | LordMorgoth.`)
@@ -165,7 +165,7 @@ bot.on('message', async message => {
         message.channel.sendEmbed(embed);
         }
     else if (message.content.startsWith(`${botsettings.prefix}Shax`)) {
-        if (message.member.id != '183549541470044161') {
+        if (message.member.id != '183549541470044161,472812198654246923') {
             return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
@@ -214,7 +214,7 @@ bot.on('message', async message => {
         
 
     else if (message.content.startsWith(`${botsettings.prefix}Smute`)) {
-        if (message.member.id != '183549541470044161') {
+        if (message.member.id != '183549541470044161,472812198654246923') {
             return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
@@ -260,7 +260,7 @@ bot.on('message', async message => {
     }
 
     else if (message.content.startsWith(`${botsettings.prefix}Sunmute`)) {
-        if (message.member.id != '183549541470044161') {
+        if (message.member.id != '183549541470044161,472812198654246923') {
             return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();
@@ -330,7 +330,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
 }
 
             else if (message.content.startsWith(`${botsettings.prefix}Sban`)) {
-                if (message.member.id != '183549541470044161') {
+                if (message.member.id != '183549541470044161,472812198654246923') {
                     return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
                 } else {
                     var memberban = message.mentions.users.first();
@@ -352,7 +352,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
             }
         }
                             else if (message.content.startsWith(`${botsettings.prefix}Sunban`)) {
-                                if (message.member.id != '183549541470044161') {
+                                if (message.member.id != '183549541470044161,472812198654246923') {
                                     return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
                                 } else {
                                     let memberunban = message.content.split(/ +/g).slice(1).join(' ');

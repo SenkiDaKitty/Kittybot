@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({ disableEveryone: true })
  
 var prefix = "M";
-var idAdmins = ['183549541470044161'];
+var idAdmins = ['183549541470044161'''];
 var ProzPrefix = "P";
 var Turtle = "Turtle"
 var Pub = "C"
@@ -214,7 +214,7 @@ bot.on('message', async message => {
         
 
     else if (message.content.startsWith(`${botsettings.prefix}Smute`)) {
-        if (message.member.id != '183549541470044161`,`472812198654246923') {
+        if (message.member.id != `183549541470044161`,`472812198654246923`) {
             return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
         } else {
             let userToMute = message.mentions.users.first();

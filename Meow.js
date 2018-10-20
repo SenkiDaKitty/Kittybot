@@ -401,7 +401,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
         }
              else if (message.content.startsWith(`${botsettings.prefix}Eban`)) {
                 if (message.member.id != '472812198654246923') {
-                    return message.channel.sendMessage(`${message.author}, You're not senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
+                    return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`)
                 } else {
                     var memberban = message.mentions.users.first();
                     if (!memberban) {

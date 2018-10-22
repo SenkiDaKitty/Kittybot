@@ -364,7 +364,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
                             }    
                               else if (message.content.startsWith(`${botsettings.prefix}Sunban`)) {
                                 if (message.member.id != '183549541470044161') {
-                                    return message.channel.sendMessage(`${message.author}, You're not Elie, only that person can use that command. Tu n'es pas Elie, seul cette personne peut utiliser cette commande ! >:C`)
+                                    return message.channel.sendMessage(`${message.author}, You're not Senki, only that person can use that command. Tu n'es pas Senki, seul cette personne peut utiliser cette commande ! >:C`)
                                 } else {
                                     let memberunban = message.content.split(/ +/g).slice(1).join(' ');
                                     if (!memberunban) {
@@ -405,7 +405,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
                 } else {
                     var memberban = message.mentions.users.first();
                     if (!memberban) {
-                        return message.channel.send("Elie, Tell me who to ban, Senki dis moi qui je dois bannir :3");
+                        return message.channel.send("Elie, Tell me who to ban, Elie dis moi qui je dois bannir :3");
                     } else {
                     if(!message.guild.member(memberban).bannable){
                     return message.channel.sendMessage("Sorry Elie, i don't have enough permissions")

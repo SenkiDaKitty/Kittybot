@@ -128,21 +128,23 @@ bot.on('message', async message => {
         }
     }
     else if (message.content.startsWith(`${botsettings.prefix}ping`)) {
-       if(ping <= 99) {
+       if(bot.ping <= 99) {
         var embed = new Discord.RichEmbed()
         .setAuthor("Asked By, Demandé Par : " + message.author.username,message.author.avatarURL)
         .setTitle("<a:blobdance:483297638356353027> Kitty MS <a:blobdance:483297638356353027>")
         .addField(`${Math.round(bot.ping)}` + "ms <a:blobdance:483297638356353027>",`Le bot ne lag actuellement pas. Hébergeur : Heroku`)
         .setColor("0x02e427")
         .setFooter("©SenkiTheKitty 2018","https://media.discordapp.net/attachments/434459534514454528/481879724910444556/4ef67948850f942f08d52125928feeb5.gif?width=473&height=473")
+        message.delete()
         message.channel.sendEmbed(embed);
-            } else if(ping <= 200) {
+            } else if(bot.ping <= 200) {
              var embed = new Discord.RichEmbed()
         .setAuthor("Asked By, Demandé Par : " + message.author.username,message.author.avatarURL)
         .setTitle("<a:blobdance:483297638356353027> Kitty MS <a:blobdance:483297638356353027>")
         .addField(`${Math.round(bot.ping)}` + "ms <a:blobdance:483297638356353027>",`Le bot rencontre quelques problèmes techniques, Sorry :c. Hébergeur : Heroku`)
         .setColor("0xff0000")
         .setFooter("©SenkiTheKitty 2018","https://media.discordapp.net/attachments/434459534514454528/481879724910444556/4ef67948850f942f08d52125928feeb5.gif?width=473&height=473")
+        message.delete()
         message.channel.sendEmbed(embed);
         return
 

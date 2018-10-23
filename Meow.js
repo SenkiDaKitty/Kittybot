@@ -503,7 +503,7 @@ else if (message.content.startsWith(`${botsettings.prefix}Leave`)) {
             }
         }
     }
- 
+}
 });
  
 bot.login(process.env.BOT_TOKEN);

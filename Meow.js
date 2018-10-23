@@ -135,7 +135,6 @@ bot.on('message', async message => {
         .addField(`${Math.round(bot.ping)}` + "ms <a:blobdance:483297638356353027>",`Le bot ne lag actuellement pas. Hébergeur : Heroku`)
         .setColor("0x02e427")
         .setFooter("©SenkiTheKitty 2018","https://media.discordapp.net/attachments/434459534514454528/481879724910444556/4ef67948850f942f08d52125928feeb5.gif?width=473&height=473")
-        message.delete()
         message.channel.sendEmbed(embed);
             } else if(ping <= 200) {
              var embed = new Discord.RichEmbed()
@@ -144,7 +143,6 @@ bot.on('message', async message => {
         .addField(`${Math.round(bot.ping)}` + "ms <a:blobdance:483297638356353027>",`Le bot rencontre quelques problèmes techniques, Sorry :c. Hébergeur : Heroku`)
         .setColor("0xff0000")
         .setFooter("©SenkiTheKitty 2018","https://media.discordapp.net/attachments/434459534514454528/481879724910444556/4ef67948850f942f08d52125928feeb5.gif?width=473&height=473")
-        message.delete()
         message.channel.sendEmbed(embed);
         return
 
